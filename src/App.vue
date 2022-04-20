@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BaseDemo />
+    <!-- <PolygonTool/> -->
+    <!-- <SwitchMapDemo/> -->
+    <!-- <VectorLayerDemo/> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseDemo from "./components/BaseDemo.vue";
+// import PolygonTool from "./components/PolygonTool.vue";
+// import SwitchMapDemo from "./components/SwitchMapDemo.vue";
+// import VectorLayerDemo from "./components/VectorLayerDemo.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    BaseDemo,
+    // PolygonTool,
+    // SwitchMapDemo,
+    // VectorLayerDemo
+  },
+  mounted() {
+    this.$axios.post("/api/user/myTranferRecord").then((res) => {
+      console.log(res); //这里返回的就是我们在mock中自定义的数据
+    });
+  },
+};
 </script>
 
 <style>
