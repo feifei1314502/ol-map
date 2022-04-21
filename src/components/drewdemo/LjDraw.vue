@@ -37,7 +37,8 @@ import { Vector as VectorLayer } from "ol/layer";
 import { OSM, Vector as VectorSource } from "ol/source";
 import Draw from "ol/interaction/Draw";
 import { Fill, Stroke, Style, Text, Icon, Circle } from "ol/style";
- 
+
+
 export default {
   name: "LjDraw",
   props: {
