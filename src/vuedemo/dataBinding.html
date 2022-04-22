@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" v-model="msg" />
+    <p v-model="msg"></p>
+    <script>
+      const data = {
+        msg: "dddd",
+      };
+      const input = document.querySelector("input");
+      const p = document.querySelector("p");
+      input.value = data.msg;
+      p.innerHTML = data.msg;
+      // 视图跟着数据变
+      input.addEventListener("input", function () {
+        data.msg = input.value;
+      });
+      //   数据变，视图变
+      let temp = data.msg;
+      Object.defineProperty(data, "msg", {
+        get() {
+          return temp;
+        },
+        set(value) {
+          temp = value;
+          // 视图变
+          input.value = temp;
+          p.innerHTML = temp;
+        },
+      });
+    //   data.msg=''
+    /** 
+     * view的改变触发数据的改变:这个实现比件容易,可以通过事件监听实现   input.addEventListener("input",
+     * )数据的改变触发view的改变:这个是通过Object.defineProperty()这个方法实现数据劫持,以及发布者订阅模式实现的.
+     * (1)vue初始化实例的时候,通过Object.defineProperty()这个方法实现数据劫持
+
+       (2)定义监听器监听实例属性的变化
+
+       (3)监听器监听到属性变化后通知对应的订阅者
+
+       (4)订阅者执行对应的方法重新视图
+
+       (5)编译器扫描解析节点的相关指令,初始化模板数据以及初始化响应的订阅器
+     **/
+    </script>
+  </body>
+</html>
+
