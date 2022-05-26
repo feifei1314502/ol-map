@@ -1,25 +1,28 @@
 <template>
   <div id="app">
-    <BaseDemo />
+    <!-- <BaseDemo /> -->
     <!-- <PolygonTool/> -->
     <!-- <SwitchMapDemo/> -->
     <!-- <VectorLayerDemo/> -->
+    <DomToImage/>
   </div>
 </template>
 
 <script>
-import BaseDemo from "./components/BaseDemo.vue";
+// import BaseDemo from "./components/BaseDemo.vue";
 // import PolygonTool from "./components/PolygonTool.vue";
 // import SwitchMapDemo from "./components/SwitchMapDemo.vue";
 // import VectorLayerDemo from "./components/VectorLayerDemo.vue";
+import DomToImage from "./components/DomToImage.vue";
 
 export default {
   name: "App",
   components: {
-    BaseDemo,
+    // BaseDemo,
     // PolygonTool,
     // SwitchMapDemo,
-    // VectorLayerDemo
+    // VectorLayerDemo,
+    DomToImage
   },
   mounted() {
     this.$axios.post("/api/user/myTranferRecord").then((res) => {

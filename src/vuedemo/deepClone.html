@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  var a1 = {b: {c: {}};
+
+      //   var a2 = shallowClone(a1); // 浅拷贝方法
+      //   a2.b.c === a1.b.c // true 新旧对象还是共享同一块内存
+
+      //   var a3 = deepClone(a3); // 深拷贝方法
+      //   a3.b.c === a1.b.c // false 新对象跟原对象不共享内存
+
+      /**
+       * 
+       * 浅拷贝的实现方式 
+       * Object.assign() 
+       * 函数库lodash的_.clone方法
+       * 展开运算符...
+       * Array.prototype.concat()
+       * Array.prototype.slice()
+       * **/
+      /**
+       * 
+       * 深拷贝的实现方式
+       * JSON.parse(JSON.stringify())
+       * 函数库lodash的_.cloneDeep方法
+       * jQuery.extend()方法
+       * 手写递归方法
+       * 递归方法实现深度克隆原理：遍历对象、数组直到里边都是基本数据类型，然后再去复制，就是深度拷贝
+       * **/
+    </script>
+  </body>
+</html>
