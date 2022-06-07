@@ -4,7 +4,9 @@
     <!-- <PolygonTool/> -->
     <!-- <SwitchMapDemo/> -->
     <!-- <VectorLayerDemo/> -->
-    <DomToImage/>
+    <!-- <DomToImage/> -->
+    <!-- <TreeDemo/> -->
+    <ModifyFeatures />
   </div>
 </template>
 
@@ -13,7 +15,9 @@
 // import PolygonTool from "./components/PolygonTool.vue";
 // import SwitchMapDemo from "./components/SwitchMapDemo.vue";
 // import VectorLayerDemo from "./components/VectorLayerDemo.vue";
-import DomToImage from "./components/DomToImage.vue";
+// import DomToImage from "./components/DomToImage.vue";
+// import TreeDemo from "./components/TreeDemo.vue";
+import ModifyFeatures from "./components/ModifyFeatures.vue";
 
 export default {
   name: "App",
@@ -22,7 +26,9 @@ export default {
     // PolygonTool,
     // SwitchMapDemo,
     // VectorLayerDemo,
-    DomToImage
+    // DomToImage,
+    // TreeDemo,
+    ModifyFeatures,
   },
   mounted() {
     this.$axios.post("/api/user/myTranferRecord").then((res) => {
