@@ -3,10 +3,11 @@
     <!-- <BaseDemo /> -->
     <!-- <PolygonTool/> -->
     <!-- <SwitchMapDemo/> -->
-    <!-- <VectorLayerDemo/> -->
+    <VectorLayerDemo/>
     <!-- <DomToImage/> -->
     <!-- <TreeDemo/> -->
-    <ModifyFeatures />
+    <!-- <ModifyFeatures /> -->
+    <!-- <DigitalScale /> -->
   </div>
 </template>
 
@@ -14,10 +15,11 @@
 // import BaseDemo from "./components/BaseDemo.vue";
 // import PolygonTool from "./components/PolygonTool.vue";
 // import SwitchMapDemo from "./components/SwitchMapDemo.vue";
-// import VectorLayerDemo from "./components/VectorLayerDemo.vue";
+import VectorLayerDemo from "./components/VectorLayerDemo.vue";
 // import DomToImage from "./components/DomToImage.vue";
 // import TreeDemo from "./components/TreeDemo.vue";
-import ModifyFeatures from "./components/ModifyFeatures.vue";
+// import ModifyFeatures from "./components/ModifyFeatures.vue";
+// import DigitalScale from "./components/DigitalScale.vue";
 
 export default {
   name: "App",
@@ -25,10 +27,11 @@ export default {
     // BaseDemo,
     // PolygonTool,
     // SwitchMapDemo,
-    // VectorLayerDemo,
+    VectorLayerDemo,
     // DomToImage,
     // TreeDemo,
-    ModifyFeatures,
+    // ModifyFeatures,
+    // DigitalScale,
   },
   mounted() {
     this.$axios.post("/api/user/myTranferRecord").then((res) => {

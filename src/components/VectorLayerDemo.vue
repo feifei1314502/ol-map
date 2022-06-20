@@ -10,7 +10,7 @@ import XYZ from "ol/source/XYZ";
 import { Map, View, Feature } from "ol";
 import { Style, Stroke, Fill } from "ol/style";
 import { Polygon, MultiPolygon } from "ol/geom";
-import { defaults as defaultControls } from "ol/control";
+import { defaults as defaultControls ,ScaleLine} from "ol/control";
 import { fromLonLat } from "ol/proj";
 
 export default {
@@ -46,7 +46,7 @@ export default {
         target: "Map",
         controls: defaultControls({
           zoom: true,
-        }).extend([]),
+        }).extend([new ScaleLine()]),
         layers: [
           new TileLayer(
             {
@@ -191,6 +191,14 @@ export default {
         console.log(res);
         this.addArea([res.data]); //添加区域图层方法
       });
+
+      this.map.getView().on("change:resolution",  ()=> {
+
+        //这里使用了View中的getResolution方法获得当前View的分辨率。
+
+        console.log(' this.map.getView().getResolution() * 3779.5275590551;', this.map.getView().getResolution() * 3779.5275590551);
+    });
+
   },
 };
 </script>
